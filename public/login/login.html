@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Signup</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <form id="signupForm">
+    <h2 id="form-heading">Signup</h2>
+    <input type="text" name="username" placeholder="Enter Name" required />
+    <input type="email" name="email" placeholder="Enter email" required />
+    <input type="password" name="password" placeholder="Enter Password" required />
+    <button id="submit-button" type="submit">Submit</button>
+  </form>
+
+  <script>
+document.getElementById("signupForm").addEventListener("submit", async function (e) {
+  e.preventDefault();
+
+  const username = document.querySelector('input[name="username"]').value;
+  const email = document.querySelector('input[name="email"]').value;
+  const password = document.querySelector('input[name="password"]').value;
+
+  try {
+    const res = await fetch('/signup', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ username, email, password })
+    });
+
+    const data = await res.json();
+    console.log("Response from server:", data);
+
+    alert(data.message);
+
+    if (data.redirect) {
+      localStorage.setItem('username', data.username);  // save username after signup
+      window.location.href = data.redirect;
+    }
+
+  } catch (err) {
+    console.error("Signup error:", err);
+    alert("Something went wrong.");
+  }
+});
+
+  </script>
+</body>
+</html>
+
+
+

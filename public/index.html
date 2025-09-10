@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ONEBITE PIZZA</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="utility.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="navbar">
+          <div class="logo">
+            <i class="fa-solid fa-pizza-slice" aria-hidden="true"></i>ONEBITE PIZZA
+          </div>
+          <div class="delAdd">
+            Delivered to: <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+            <p id="delivered"></p>
+          </div>
+          <div class="rightSec">
+            <button class="btn" id="cart-btn">
+              <a href="cart/cart.html"><span><i class="fa-solid fa-cart-shopping" aria-hidden="true"></i> Cart </span></a>
+            </button>
+            
+            <button class="btn" id="signup-btn">
+             <a href="login/login.html"><span><i class="fa-solid fa-user" aria-hidden="true"></i> Sign Up </span></a>
+            </button>
+                       <span id="username-display" style="display:none; color: white; font-weight: bold; margin-left: 10px;"></span>
+
+            <button class="btn">
+              <a href="login/signup.html"><span><i class="fa-solid fa-user" aria-hidden="true"></i> Login </span></a> 
+            </button>
+          </div>
+        </div>
+        <div class="hero">
+          <div class="lft">
+            <div class="txt-content">
+              <h1>Cravings for PIZZA?</h1>
+              <p>ONEBITE Pizza is all yours</p>
+              <div class="addrs">
+                <h5>Delivery</h5>
+                <hr />
+                <div class="deliadd">
+                  <input type="text" name="address" id="delivery-add" placeholder="Enter Delivery address"/>
+                  <button class="btn" id="Confirm-btn">Confirm</button>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+
+          <div class="right-heroSec"></div>
+        </div>
+          
+      </nav>
+    </header>
+    <main>
+      <h1 id="menu-heading">MENU</h1>
+      <div class="items">
+        <div class="item"> 
+          <div class="item-img" style="background-image: url(/images/Margherit.jpg);"></div>
+          <p class="item-name">Margherita</p>
+          <p class="item-price">Price: ₹139</p>
+          <div>
+            <button class="item-btn add-to-cart">Add to Cart</button>
+            <button class="item-btn buy-now">Buy Now</button>
+          </div>
+        </div>
+        
+        <div class="item">
+          <div class="item-img" style="background-image: url(/images/Double_Cheese_Margherita.jpg);"></div>
+          <p class="item-name">Double Cheese Margherita</p>
+          <p class="item-price">Price: ₹199</p>
+          <div>
+            <button class="item-btn add-to-cart">Add to Cart</button>
+            <button class="item-btn buy-now">Buy Now</button>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="item-img" style="background-image: url(/images/Peppy_Paneer.jpg);"></div>
+          <p class="item-name">Peppy Paneer</p>
+          <p class="item-price">Price: ₹239</p>
+          <div>
+            <button class="item-btn add-to-cart">Add to Cart</button>
+            <button class="item-btn buy-now">Buy Now</button>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="item-img" style="background-image: url(/images/Paneer_Makhni.jpg);"></div>
+          <p class="item-name">Paneer Makhni</p>
+          <p class="item-price">Price: ₹250</p>
+          <div>
+            <button class="item-btn add-to-cart">Add to Cart</button>
+            <button class="item-btn buy-now">Buy Now</button>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="item-img" style="background-image: url(/images/Pepper_Barbeque_&_Onion.jpg);"></div>
+          <p class="item-name">Pepper Barbeque Onion</p>
+          <p class="item-price">Price: ₹289</p>
+          <div>
+            <button class="item-btn add-to-cart">Add to Cart</button>
+            <button class="item-btn buy-now">Buy Now</button>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="item-img" style="background-image: url(/images/chicken_pepperoni.png);"></div>
+          <p class="item-name">Chicken Pepperoni</p>
+          <p class="item-price">Price: ₹299</p>
+          <div>
+            <button class="item-btn add-to-cart">Add to Cart</button>
+            <button class="item-btn buy-now">Buy Now</button>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="item-img" style="background-image: url(/images/pepper-barbeque-chicken.png);"></div>
+        <p class="item-name">Pepper Barbeque Chicken</p>
+        <p class="item-price">Price: ₹319</p>
+        <div>
+          <button class="item-btn add-to-cart">Add to Cart</button>
+          <button class="item-btn buy-now">Buy Now</button>
+        </div>
+      </div>
+
+        <div class="item">
+          <div class="item-img" style="background-image: url(/images/chicken_fiesta.png);"></div>
+        <p class="item-name">Chicken Fiesta</p>
+        <p class="item-price">Price: ₹379</p>
+        <div>
+          <button class="item-btn add-to-cart">Add to Cart</button>
+          <button class="item-btn buy-now">Buy Now</button>
+        </div>
+      </div>
+
+        <div class="item">
+          <div class="item-img" style="background-image: url(/images/chicken_sausage.png);"></div>
+       <p class="item-name">Chicken Sausage</p>
+       <p class="item-price">Price: ₹399</p>
+        <div>
+          <button class="item-btn add-to-cart">Add to Cart</button>
+          <button class="item-btn buy-now">Buy Now</button>
+        </div>
+      </div>
+      </div>
+    </main>
+    <footer>
+      <div class="footSection">
+        <div class="footer-content">
+          <p id="footer-para">Order a delicious pizza on the go, anywhere, anytime. ONEBITE PIZZA is happy to assist you with your home delivery. Every time you order, you get a hot and fresh pizza delivered at your doorstep in under 15 minutes. *T&C Apply.
+            Hurry up and place your order now! © ONEBITE PIZZA. All rights reserved.</p>
+        </div>
+        
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

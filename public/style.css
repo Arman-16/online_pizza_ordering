@@ -1,0 +1,271 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  padding: 0px;
+  margin: 0px;
+  font-family: Poppins;
+}
+
+.navbar {
+  height: 60px;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0px 0px 10px 0.12px rgba(41, 39, 36, 0.47);
+  color: orangered;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px rgba(41, 39, 36, 0.47);
+  text-shadow: 0px 0px 10px 0.12px rgba(41, 39, 36, 0.47);
+  
+}
+
+.logo {
+  width: 30%;
+  height: 60px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-size:x-large;
+
+  /* border-right: 2px solid orange; */
+  /* border-left: 2px solid orange; */
+}
+
+.rightSec {
+  height: 60px;
+  width: 30%;
+  /* background-color: rgb(101, 165, 42); */
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  /* border-right: 2px solid orange; */
+}
+
+.rightSec a {
+  color: white;
+  text-decoration: none;
+}
+
+.btn {
+  border-style: none;
+  padding: 8px;
+  background-color: orangered;
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 0.12px rgba(41, 39, 36, 0.47);
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: rgb(237, 36, 36);
+}
+
+.delAdd {
+  width: 40%;
+  height: 40px;
+  background-color: ghostwhite;
+  box-shadow: 0px 0px 10px 0.12px rgba(41, 39, 36, 0.47);
+  border-radius: 5px;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  /* border-right: 2px solid rgb(78, 75, 69); */
+}
+
+.hero {
+  height: 300px;
+  width: 95%;
+  margin: 0 auto;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: orangered;
+  background-image: url(/images/pizza\ img1.jpg);
+  background-size: cover;
+  display: flex;
+  box-shadow: 0px 0px 10px 0.12px rgba(41, 39, 36, 0.47);
+}
+
+.lft {
+  /* background-color: aliceblue; */
+  width: 400px;
+  margin-left: 50px;
+  margin-top: 20px;
+}
+
+.txt-content {
+  color: white;
+}
+
+.addrs {
+  margin-top: 70px;
+  height: 100px;
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.addrs h5 {
+  margin-top: 10px;
+  border-radius: 20px;
+  text-align: center;
+ 
+}
+
+hr {
+  border: none;
+  border: 1px solid black;
+  width: 80%; /* Adjust width of the line */
+  margin: 6px auto; /* Centering the line */
+  
+}
+
+.deliadd input {
+  border-style: none;
+  margin-left: 40px;
+  padding: 7px;
+  background-color: gainsboro;
+  color: black;
+  border-radius: 5px;
+}
+
+/* .right-heroSec {
+  /* background-color: aliceblue; */
+  /* height: 250px;
+  width: 300px;
+  margin: 20px 160px;
+  background-image: url(images/chefpizza.png);
+  background-size: cover;
+  border-radius: 10px; */
+  /* box-shadow: 0px 0px 10px 0.12px rgba(41, 39, 36, 0.47); */
+  
+/* } */ 
+
+main .items{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.items{
+  height: 90%;
+  width: 80%;
+  margin: 0 auto;
+  background-color: rgb(236, 233, 233);
+  box-shadow: 0px 0px 10px 0.12px rgba(41, 39, 36, 0.47);
+  margin-top: 0px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 40px;
+  border-radius: 10px;
+  
+
+}
+
+.item{
+  height: 250px;
+  width: 25%;
+  background-color: white;
+  /* border: 2px solid black; */
+  border-radius: 10px;
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  box-shadow: 0px 0px 10px 0.12px rgba(41, 39, 36, 0.47);
+  margin: 20px 0;
+ 
+}
+
+.item-img {
+  height: 70%;
+  width: 100%;
+  /* background-color: aqua; */
+  border-radius: 10px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  
+}
+
+.item p{
+  font-size: small;
+  text-align: center;
+  font-weight: 800;
+  width: 100%;
+}
+
+.item-price{
+  color: red;
+  
+}
+
+.item-btn {
+  margin-bottom: 10px;
+  cursor: pointer;
+  border-style: none;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 4px 0.12px rgba(41, 39, 36, 0.47);
+  color: white;
+  font-size: smaller;
+}
+
+.add-to-cart {
+  background-color: green;
+}
+
+.buy-now {
+  background-color: orangered;
+}
+
+.footSection {
+   height: 100px;
+   width: 100%;
+   background-color: black;
+   color: white;
+   font-size:xx-small;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   
+}
+
+.footer-content {
+  width: 70%;
+}
+
+#footer-para{
+  font-size: xx-small;
+  font-weight: 200;
+}
+
+.cart-items{
+  white-space: nowrap;
+  text-align: center;
+  line-height: 1px;
+  padding: 8px 0;
+  height: 16px;
+  background: white;
+  /* position: absolute; */
+  border-radius: 50%;
+  font-size: 12px;
+  color: #fff;
+  left: 13px;
+  top: -2px;
+  font-weight: 700;
+}
+
+#menu-heading{
+  text-align: center;
+  margin-top: 30px;
+}
+

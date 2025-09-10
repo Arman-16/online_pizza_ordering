@@ -1,0 +1,40 @@
+const express = require('express');
+const mongoose = require('mongoose');
+const path = require('path');
+const bodyParser = require('body-parser');
+const app = express();
+
+// MongoDB Connection
+mongoose.connect('mongodb://localhost:27017/OnebiteDB', {
+  // useNewUrlParser: true,
+  // useUnifiedTopology: true
+}).then(() => console.log("MongoDB Connected"))
+  .catch(err => console.log(err));
+
+// Middleware
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
+
+
+// Routes
+const authRoutes = require('./main/routes/auth');
+app.use('/', authRoutes);
+
+
+// Serve login.html for the homepage route
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'login.html'));
+
+});
+
+// Serve login2(singup.html).html for the homepage route
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'signup.html'));
+
+});
+
+
+app.listen(3000, () => {
+  console.log("Server running on http://localhost:3000");
+});

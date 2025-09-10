@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  padding: 0px;
+  margin: 0px;
+  font-family: Poppins;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(/images/pizza\ img1.jpg);
+    background-size: cover;
+}
+
+#loginForm{
+    background-color: white;
+    margin-top: 100px;
+    width: 400px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    box-shadow: 0px 10px 10px 0.12px black;
+    border-radius: 30px;
+    color: orangered;
+}
+
+#form-heading {
+    font-size: medium;
+    margin-top: 15px;
+}
+
+input{
+    display: block;
+    border: none;
+    background-color: rgba(245, 245, 220, 0);
+    padding: 20px;
+    margin-top: 10px;
+    width: 80%;
+    box-shadow: 0px 0px 5px 0.10px black;
+    border-radius: 30px;
+}
+
+
+
+#login-button {
+   margin-top: 10px;
+   margin-bottom: 10px;
+   
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    padding: 5px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 5px 0.10px black;
+    color: white;
+    background-color: green;
+}
+
+
+
