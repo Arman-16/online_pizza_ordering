@@ -89,7 +89,7 @@ async function fetchCartItemsFromDB() {
   }
 
   try {
-    const response = await fetch("/get-cart", {
+    const response = await fetch("/api/auth/get-cart", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -105,7 +105,6 @@ async function fetchCartItemsFromDB() {
   }
 }
 
-// Render cart items on page
 async function renderCartItems() {
   const cartContainer = document.querySelector(".cart-items-row");
   cartContainer.innerHTML = "";
@@ -118,25 +117,37 @@ async function renderCartItems() {
   }
 
   cartItems.forEach((item) => {
-    let cartItemHTML = `
-      <div class="cart-item" data-name="${item.name}" data-price="${item.price}">
-        <div class="cart-img" style="background-image: url('${item.img}');"></div>
-        <div class="cart-details">
-          <p class="cart-item-name">${item.name}</p>
-          <p class="cart-item-price">Price: ₹${item.price}</p>
-          <div class="cart-quantity">
-            <button class="quantity-btn decrease" onclick="updateQuantity(this, -1)">-</button>
-            <span class="quantity-display">${item.quantity || 1}</span>
-            <button class="quantity-btn increase" onclick="updateQuantity(this, 1)">+</button>
-          </div>
+    let cartItem = document.createElement("div");
+    cartItem.classList.add("cart-item");
+    cartItem.setAttribute("data-name", item.name);
+    cartItem.setAttribute("data-price", item.price);
+
+    cartItem.innerHTML = `
+      <div class="cart-img" style="background-image: url('${item.img}');"></div>
+      <div class="cart-details">
+        <p class="cart-item-name">${item.name}</p>
+        <p class="cart-item-price">Price: ₹${item.price}</p>
+        <div class="cart-quantity">
+          <button class="quantity-btn decrease">-</button>
+          <span class="quantity-display">${item.quantity || 1}</span>
+          <button class="quantity-btn increase">+</button>
         </div>
       </div>
     `;
-    cartContainer.innerHTML += cartItemHTML;
+
+    cartContainer.appendChild(cartItem);
+
+    // Attach event listeners to buttons
+    const decreaseBtn = cartItem.querySelector(".decrease");
+    const increaseBtn = cartItem.querySelector(".increase");
+
+    decreaseBtn.addEventListener("click", () => updateQuantity(decreaseBtn, -1));
+    increaseBtn.addEventListener("click", () => updateQuantity(increaseBtn, 1));
   });
 
   updateTotalPrice();
 }
+
 
 // Update total cart price
 function updateTotalPrice() {
@@ -167,7 +178,7 @@ async function updateQuantity(button, change) {
     cartItem.remove();
 
     // Also remove item from DB
-    await fetch("/remove-from-cart", {
+    await fetch("/api/auth/remove-from-cart", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username, name: itemName }),
@@ -177,7 +188,7 @@ async function updateQuantity(button, change) {
     quantityDisplay.innerText = newQuantity;
 
     // Update quantity in DB
-    await fetch("/update-cart-quantity", {
+    await fetch("/api/auth/update-cart-quantity", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username, name: itemName, quantity: newQuantity }),
@@ -202,7 +213,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // 1. Check if user has address
-  const addressResponse = await fetch('/get-user-address', {
+  const addressResponse = await fetch('/api/auth/get-user-address', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ username })
@@ -219,7 +230,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // 2. Fetch cart from DB
-  const cartResponse = await fetch("/get-cart", {
+  const cartResponse = await fetch("/api/auth/get-cart", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ username }),
@@ -234,7 +245,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // 3. Clear cart in DB
-  await fetch("/clear-cart", {
+  await fetch("/api/auth/clear-cart", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ username }),

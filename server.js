@@ -7,7 +7,18 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const app = express();
 
-app.use(helmet());                                    //11-09-2025 ADDED//
+// Helmet with CSP for security (inline scripts blocked)       //11-09-2025 ADDED//
+app.use(
+  helmet({
+    contentSecurityPolicy: {
+      directives: {
+        defaultSrc: ["'self'"],
+        styleSrc: ["'self'", "'unsafe-inline'", "https://cdnjs.cloudflare.com"],
+        fontSrc: ["'self'", "https://cdnjs.cloudflare.com"],
+      },
+    },
+  })
+);     
 
 const PORT = process.env.PORT || 5000;              //11-09-2025 ADDED//
 const MONGO_URI = process.env.MONGO_URI;           //11-09-2025 ADDED//
@@ -25,7 +36,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Routes
 const authRoutes = require('./main/routes/auth');
-app.use('/', authRoutes);
+app.use('/api/auth', authRoutes);
+
+
+// Serve static files from 'public' folder
+app.use(express.static(path.join(__dirname, "public")));
 
 
 // Serve login.html for the homepage route

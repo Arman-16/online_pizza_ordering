@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <title>Signup</title>
-  <link rel="stylesheet" href="login.css">
+  <link rel="stylesheet" href="login.css"/>
+  
 </head>
 <body>
   <form id="signupForm">
@@ -14,40 +15,8 @@
     <button id="submit-button" type="submit">Submit</button>
   </form>
 
-  <script>
-document.getElementById("signupForm").addEventListener("submit", async function (e) {
-  e.preventDefault();
-
-  const username = document.querySelector('input[name="username"]').value;
-  const email = document.querySelector('input[name="email"]').value;
-  const password = document.querySelector('input[name="password"]').value;
-
-  try {
-    const res = await fetch('/signup', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ username, email, password })
-    });
-
-    const data = await res.json();
-    console.log("Response from server:", data);
-
-    alert(data.message);
-
-    if (data.redirect) {
-      localStorage.setItem('username', data.username);  // save username after signup
-      window.location.href = data.redirect;
-    }
-
-  } catch (err) {
-    console.error("Signup error:", err);
-    alert("Something went wrong.");
-  }
-});
-
-  </script>
+  <script src="signup.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
 
