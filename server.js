@@ -35,12 +35,12 @@ app.get('/', (req, res) => {
 });
 
 // Serve login2(singup.html).html for the homepage route
-app.get('/', (req, res) => {
+app.get('/signup', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'signup.html'));
 
 });
 
 
-app.listen(3000, () => {
-  console.log("Server running on http://localhost:3000");
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
