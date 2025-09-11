@@ -1,15 +1,21 @@
+require('dotenv').config()                              //11-09-2025 ADDED//
+
 const express = require('express');
+const helmet = require('helmet');                      //11-09-2025 ADDED//
 const mongoose = require('mongoose');
 const path = require('path');
 const bodyParser = require('body-parser');
 const app = express();
 
+app.use(helmet());                                    //11-09-2025 ADDED//
+
+const PORT = process.env.PORT || 5000;              //11-09-2025 ADDED//
+const MONGO_URI = process.env.MONGO_URI;           //11-09-2025 ADDED//
+
 // MongoDB Connection
-mongoose.connect('mongodb://localhost:27017/OnebiteDB', {
-  // useNewUrlParser: true,
-  // useUnifiedTopology: true
-}).then(() => console.log("MongoDB Connected"))
-  .catch(err => console.log(err));
+mongoose.connect(MONGO_URI)                      //11-09-2025 ADDED//
+.then(() => console.log("MongoDB Connected"))
+.catch(err => console.log(err));
 
 // Middleware
 app.use(express.json());
