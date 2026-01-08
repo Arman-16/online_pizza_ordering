@@ -1,13 +1,13 @@
-require('dotenv').config()                              //11-09-2025 ADDED//
+require('dotenv').config()                              
 
 const express = require('express');
-const helmet = require('helmet');                      //11-09-2025 ADDED//
+const helmet = require('helmet');                      
 const mongoose = require('mongoose');
 const path = require('path');
 const bodyParser = require('body-parser');
 const app = express();
 
-// Helmet with CSP for security (inline scripts blocked)       //11-09-2025 ADDED//
+// Helmet with CSP for security (inline scripts blocked)        
 app.use(
   helmet({
     contentSecurityPolicy: {
@@ -20,11 +20,11 @@ app.use(
   })
 );     
 
-const PORT = process.env.PORT || 5000;              //11-09-2025 ADDED//
-const MONGO_URI = process.env.MONGO_URI;           //11-09-2025 ADDED//
+const PORT = process.env.PORT || 5000;              
+const MONGO_URI = process.env.MONGO_URI;           
 
 // MongoDB Connection
-mongoose.connect(MONGO_URI)                      //11-09-2025 ADDED//
+mongoose.connect(MONGO_URI)                      
 .then(() => console.log("MongoDB Connected"))
 .catch(err => console.log(err));
 

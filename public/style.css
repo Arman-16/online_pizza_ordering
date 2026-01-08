@@ -38,19 +38,14 @@ body {
   justify-content: center;
   gap: 5px;
   font-size:x-large;
-
-  /* border-right: 2px solid orange; */
-  /* border-left: 2px solid orange; */
 }
 
 .rightSec {
   height: 60px;
   width: 30%;
-  /* background-color: rgb(101, 165, 42); */
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  /* border-right: 2px solid orange; */
 }
 
 .rightSec a {
@@ -82,7 +77,6 @@ body {
   align-items: center;
   justify-content: center;
   gap: 3px;
-  /* border-right: 2px solid rgb(78, 75, 69); */
 }
 
 .hero {
@@ -99,7 +93,6 @@ body {
 }
 
 .lft {
-  /* background-color: aliceblue; */
   width: 400px;
   margin-left: 50px;
   margin-top: 20px;
@@ -144,17 +137,6 @@ hr {
   border-radius: 5px;
 }
 
-/* .right-heroSec {
-  /* background-color: aliceblue; */
-  /* height: 250px;
-  width: 300px;
-  margin: 20px 160px;
-  background-image: url(images/chefpizza.png);
-  background-size: cover;
-  border-radius: 10px; */
-  /* box-shadow: 0px 0px 10px 0.12px rgba(41, 39, 36, 0.47); */
-  
-/* } */ 
 
 main .items{
   display: flex;
@@ -174,35 +156,28 @@ main .items{
   flex-wrap: wrap;
   gap: 20px 40px;
   border-radius: 10px;
-  
-
 }
 
 .item{
   height: 250px;
   width: 25%;
   background-color: white;
-  /* border: 2px solid black; */
   border-radius: 10px;
   display: flex;
-  /* align-items: center; */
   justify-content: center;
   flex-wrap: wrap;
   justify-content: space-evenly;
   box-shadow: 0px 0px 10px 0.12px rgba(41, 39, 36, 0.47);
   margin: 20px 0;
- 
 }
 
 .item-img {
   height: 70%;
   width: 100%;
-  /* background-color: aqua; */
   border-radius: 10px;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  
 }
 
 .item p{
@@ -264,7 +239,6 @@ main .items{
   padding: 8px 0;
   height: 16px;
   background: white;
-  /* position: absolute; */
   border-radius: 50%;
   font-size: 12px;
   color: #fff;

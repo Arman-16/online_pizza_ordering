@@ -24,8 +24,7 @@ body{
 
 
 /* Cart Container */
-.cart-container {
-   
+.cart-container { 
     width: 100%;
     max-width: 400px;
     margin: 20px auto;

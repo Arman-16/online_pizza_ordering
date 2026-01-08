@@ -1,13 +1,12 @@
-const mongoose = require('mongoose');
-
+const mongoose = require("mongoose");
 const cartItemSchema = new mongoose.Schema({
   name: String,
   price: Number,
   quantity: {
     type: Number,
-    default: 1
+    default: 1,
   },
-  img: String
+  img: String,
 });
 
 const userSchema = new mongoose.Schema({
@@ -15,8 +14,8 @@ const userSchema = new mongoose.Schema({
   email: String,
   password: String,
   cart: [cartItemSchema], // <-- add cart as an array of cart items
-  address: String
+  address: String,
 });
 
-const User = mongoose.model('User',userSchema);
+const User = mongoose.model("User", userSchema);
 module.exports = User;
